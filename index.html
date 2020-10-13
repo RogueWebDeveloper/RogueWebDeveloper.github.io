@@ -38,7 +38,29 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <!--<style>
+        html, body {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }-->
+    <style>
+        renderCanvas {
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+
+    </style>
+
+    <script src="https://preview.babylonjs.com/babylon.js"></script>
+    <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+    <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
   </head>
+
   <body>
 
   	<a id="home"><nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -402,6 +424,66 @@
 				</div>
 			</div>
 		</section>
+    <!--<section class="ftco-section ftco-discount img" style="" data-stellar-background-ratio="0.5">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row justify-content-center" data-scrollax-parent="true">
+					<div class="col-md-7 text-center discount ftco-animate" data-scrollax=" properties: { translateY: '-30%'}">
+            <canvas id="renderCanvas" touch-action="none"></canvas> // touch-action="none" for best results from PEP
+
+            <script>
+                var canvas = document.getElementById("renderCanvas"); // Get the canvas element
+                var engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
+
+                /******* Add the create scene function ******/
+                var createScene = function () {
+                  // This creates a basic Babylon Scene object (non-mesh)
+                      var scene = new BABYLON.Scene(engine);
+
+                      // This creates and positions a free camera (non-mesh)
+                      var camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 5, -10), scene);
+
+                      // This targets the camera to scene origin
+                      camera.setTarget(BABYLON.Vector3.Zero());
+
+                      // This attaches the camera to the canvas so we can take input control by the user
+                      camera.attachControl(canvas, true);
+
+                      // This creates a light, aiming 0,1,0 - to the sky (non-mesh)
+                      var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0), scene);
+
+                      // Default intensity is 1. Let's dim the light a small amount
+                      light.intensity = 0.7;
+
+                      // Our built-in 'sphere' shape.
+                      var sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 2, segments: 32}, scene);
+
+                      // Move the sphere upward 1/2 its height
+                      sphere.position.y = 1;
+
+                      // Our built-in 'ground' shape.
+                      var ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 6, height: 6}, scene);
+
+                      return scene;
+                };
+                /******* End of the create scene function ******/
+
+                var scene = createScene(); //Call the createScene function
+
+                // Register a render loop to repeatedly render the scene
+                engine.runRenderLoop(function () {
+                        scene.render();
+                });
+
+                // Watch for browser/canvas resize events
+                window.addEventListener("resize", function () {
+                        engine.resize();
+                });
+            </script>
+          </div>
+				</div>
+			</div>
+		</section>-->
 
     <!--<section class="ftco-section">
       <div class="container">
@@ -647,6 +729,43 @@
     					</div>
 						</a>
 					</div>
+          <div class="col-md-3 ftco-animate">
+						<div class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-17.jpeg);"></div>
+							<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<!--<span class="icon-search"></span>-->
+    					</div>
+						</a>
+					</div>
+					<div class="col-md-3 ftco-animate">
+						<div class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-18.jpg);"></div>
+							<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<!--<span class="icon-search"></span>-->
+    					</div>
+						</a>
+					</div>
+          <div class="col-md-3 ftco-animate">
+						<div class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-19.jpg);"></div>
+							<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<!--<span class="icon-search"></span>-->
+    					</div>
+						</a>
+					</div>
+					<div class="col-md-3 ftco-animate">
+						<div class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-20.jpg);"></div>
+							<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<!--<span class="icon-search"></span>-->
+    					</div>
+						</a>
+					</div>
+          <div class="col-md-3 ftco-animate">
+						<div class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-21.jpg);"></div>
+							<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<!--<span class="icon-search"></span>-->
+    					</div>
+						</a>
+					</div>
+
+
         </div>
     	</div>
     </section>
